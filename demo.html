@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app" style="height: 1000px;">
+        <h1  v-colorment @click='addnum()'>{{num}}</h1>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num:1
+        },
+        directives:{
+            'colorment':{
+                bind:function(el,binding){
+                    el.style.color = 'red'
+                }
+            },
+            'fontSize': {
+                bind:function(el, binding) {
+                    el.style.fontSize = paseInt(binding.value) + 'px'
+                }
+            }
+        },
+        computed: {
+          
+        },
+        methods: {
+            addnum(){
+                this.num+=1
+            }
+        }
+    })
+</script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	
+	
+	// package app;
+	 
+	// import org.apache.jmeter.config.Arguments;
+	// import org.apache.jmeter.protocol.java.sampler.AbstractJavaSamplerClient;
+	// import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
+	// import org.apache.jmeter.samplers.SampleResult;
+	 
+	 
+	// public  class TestLength extends AbstractJavaSamplerClient{
+	//     private SampleResult results;
+	//     private String testStr;
+	    
+	//     public void setupTest(JavaSamplerContext arg0) {
+	//         results = new SampleResult();
+	//         testStr = arg0.getParameter("testString");
+	//         if(testStr!=null&&testStr.length()>0){
+	//             results.setSamplerData(testStr);
+	//         }
+	//     }
+	    
+	//     public Arguments getDefaultParameters() {
+	//         Arguments params = new Arguments();
+	//         params.addArgument("testString", "aaa");
+	//         return params;
+	//     }
+	//     @Override
+	//     public SampleResult runTest(JavaSamplerContext arg0) {
+	//         // TODO Auto-generated method stub
+	//         int len = 0;
+	//         results.sampleStart();
+	//         len = testStr.length();
+	//         results.sampleEnd();
+	//         if(len<5){
+	//             System.out.println("String is  "+testStr);
+	//             results.setSuccessful(false);
+	//         }else{
+	//             System.out.println("String is  "+testStr);
+	//             results.setSuccessful(true);
+	//         }
+	//         return results;
+	//     }
+	 
+	//     public void teardownTest(JavaSamplerContext arg0) {
+	//     }
+	 
+
+	
+	// let car = {}
+	// let val = 3000
+	// Object.defineProperty(car, 'price', {
+	//   enumerable: true,
+	//   configurable: true,
+	//   get(){
+	//     console.log('price属性被读取了')
+	//     return val
+	//   },
+	//   set(newVal){
+	//     console.log('price属性被修改了')
+	//     val = newVal
+	//   }
+	// })
+	
+	// export class Observer {
+	// 	constructor (value) {
+	// 		this.value = value
+	// 		// 打上 ob 来判断有没有被监听
+	// 		def(value, '_ob_', this)
+	// 		if (Array.isnArray(value)) {
+				
+	// 		} else {
+				
+	// 			this.walk(value)
+	// 		}
+	// 	}
+	// 	walk (obj: Object) {
+	// 		// 获取 key 值
+	// 		const keys = Object.keys(obj)
+	// 		console.log(keys)
+	// 		for (let i = 0; i < keys.length; i++) {
+	// 		}
+	// 	}
+	// }
+	// var car = new Observer({
+	// 	'name': '666'
+	// })
+	
+</script>
+<!-- <script type="text/javascript">
+	class Coder {
+		// name(a, b) {
+		// 	console.log(val, 1)
+		// 	return val
+		// }
+		// skill(val) {
+		// 	console.log(this)
+		// 	console.log(this.name('jspang')+':'+'skll：'+ val)
+		// 
+		constructor(a,b) {
+			this.a = a
+			this.b = b
+		}
+		add() {
+			return this.a + this. b
+		}
+	}
+	// let jspang = new Coder(1,2)
+	class pangpanga extends Coder{
+	}
+	let pangpang = new pangpanga(1, 2)
+	console.log(pangpang.add())
+	// console.log(jspang.add());
+</script> -->
+<!-- <script type="text/javascript">
+	// function out() {
+	// 	val = 'pangpang'
+	// }
+	// out()
+	// console.log(val)
+	
+	function foo(a) {
+		let b = a * 2
+		function bar(c){
+			console.log(a,b,c)
+		}
+		bar(b * 3)
+	}
+	foo(2)
+</script> -->
+<!-- <script type="text/javascript">
+	var x = 10;
+	
+	function fn(){
+		debugger
+	    console.log(x);
+	}
+	
+	function show(f){
+	    var x = 20;
+		debugger
+	    (function(){
+			debugger
+	       f();    // 10
+	    })()  
+	}
+	
+	show(fn);
+</script> -->
+<script type="text/javascript">
+	// 构造继承
+	// function Student(subject) {
+	//     this.subject = "语文";
+	// 	console.log(this)
+	// }
+	
+	// function person(name, age) {
+	// 	this.name = name;
+	// 	this.age = age;
+	// 	var data ={
+	// 		name: this.name,
+	// 		age: this.age,
+	// 	}
+	// 	Student.apply(this, data);
+	// }
+	// var persons = new person("胖胖")
+	// console.log(persons.subject)
+	
+	// 原型继承
+	// function person(name){
+	// 	this.name = name
+	// }
+	// person.prototype.setName = function(name) {
+	// 	this.name = name
+	// }
+	// var person = new person("胖胖")
+	 // var scope="global";
+	 // function t(){
+	 //     console.log(scope);
+	 //     var scope="local"
+	 //     console.log(scope);
+	 // }
+	 // t();
+	
+	// function debounce(fn, wait) {
+	// 	var timeout = null
+	// 	return function() {
+	// 		if(timeout !== null) {
+	// 			clearTimeout(timeout)
+	// 		}
+	// 		timeout = setTimeout(fn, wait)
+	// 	}
+	// }
+	
+	// function handle() {
+	// 	console.log(Math.random())
+	// }
+	
+	// window.addEventListener('scroll', debounce(handle, 1000))
+	// class press(name) {
+	// 	console.log(name)
+	// 	return name
+	// }
+	
+	// const haha = new press({haha})
+	// const hehe = constructor
+	
+	// var arr = [
+	//   {
+	//   from:'张三',
+	//   to: '河南'
+	//   },
+	//   {
+	//     from:'王二',
+	//     to: '阿里'
+	//   },
+	//   {
+	//     from:'王二',
+	//     to: '杭州'
+	//   },
+	//   {
+	//     from:'王二',
+	//     to: '山东'
+	//   },
+	//   ]
+	//  function uniques(arr1) {
+	// 	 const list = new Map();
+	// 	arr1.filter((res) => !list.has(res.name) && list.set(res.name, 1))
+	//  }
+	// console.log(uniques(arr))
+	
+	// window.addEventListener('online',  this.updateOnlineStatus);
+	// window.addEventListener('offline', this.updateOnlineStatus);
+    console.log(navigator)
+    
+
+    // $.ajax({
+    //     url: 'http://localhost:8888/register',
+    //     type: 'post',
+    //     data: {userName: '高雨', password: '123', phone: '150'}
+    // })
+        // var obj = {
+        //     name: '红浪漫',
+        //     age: '999'
+        // }
+        // var arr = [
+        //     {
+        //         name: '红浪漫',
+        //         age: '999'
+        //     }
+        // ]
+        // // for (let [key,val] of Object.keys(obj)) {
+        // //     debugger
+        // //     console.log(key, val)
+        // // }
+        // for (let {key,val} of arr) {
+        //     debugger
+        //     console.log(key, val)
+        // }
+
+        // const numbers = [1, 2, 3]
+        // numbers[10] = 11
+        // console.log(numbers)
+        // press()
+        // function press() {
+        //     let x, y
+        //     try {
+        //         throw new Error()
+        //     } catch (x) {
+        //         debugger
+        //         (x = 1), (y = 2)
+        //         console.log(x, 1)
+        //     }
+        //     console.log(x, 2)
+        //     console.log(y,3)
+        // }
+
+        function Student (subject) {
+            this.subject = "语文";
+            this.subjects = "语文sssssssssss";
+        }
+        var order = new press(6, 7)
+        function press(one, two) {
+            this.ones = one
+            this.twos = two
+            Student.call(this);
+        }
+        debugger
+        console.log(order.subject)
+
+
+
+
+	
+	  
+	
+</script>
+</html>
